@@ -34,6 +34,35 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:365932988806:android:a80e045e2ba158b4038407",
+        "android_client_info": {
+          "package_name": "com.OrendaVStudios.MindBlownAdminPanel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "365932988806-7lqgli0r6h5viueqpose3cnv3k83m7s7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCCADj8CpPyA5pbkxy1mpvjmQEsBunCFf4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "365932988806-7lqgli0r6h5viueqpose3cnv3k83m7s7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

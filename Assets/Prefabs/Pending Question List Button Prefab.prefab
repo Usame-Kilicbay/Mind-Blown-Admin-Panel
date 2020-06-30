@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 2992139595497899379}
   - component: {fileID: 2992139595497899380}
   - component: {fileID: 2992139595497899376}
+  - component: {fileID: 844602440019619262}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Pending Question List Button Prefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,6 +154,19 @@ MonoBehaviour:
   m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
   m_EffectDistance: {x: 15, y: -20}
   m_UseGraphicAlpha: 1
+--- !u!114 &844602440019619262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2992139595497899382}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ecc1751dea656e4684febde2ee6a2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _pendingQuestionListButtton: {fileID: 2992139595497899379}
 --- !u!1 &2992139595544634393
 GameObject:
   m_ObjectHideFlags: 0

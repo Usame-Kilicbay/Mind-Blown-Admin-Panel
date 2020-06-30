@@ -22,7 +22,7 @@ public class MainMenuUI : MonoBehaviour
         button_Play.onClick.AddListener(UIManager.Instance.ShowCategoriesPanel);
         button_Settings.onClick.AddListener(UIManager.Instance.ShowSettingsPanel);
         button_UserProfile.onClick.AddListener(UserProfile);
-        button_ApprovePendingQuestion.onClick.AddListener(UIManager.Instance.ShowAprrovePendingQuestionsPanel);
+        button_ApprovePendingQuestion.onClick.AddListener(UIManager.Instance.ShowApprovePendingQuestionPanel);
     }
 
     //private void LoadData() 

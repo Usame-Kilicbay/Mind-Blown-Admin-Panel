@@ -20,6 +20,7 @@ public class BottomNavigationBarManager : Singleton<BottomNavigationBarManager>
     [SerializeField] private GameObject _userNavigation;
     [SerializeField] private GameObject _mainNavigation;
     [SerializeField] private GameObject _settingsNavigation;
+    [SerializeField] private GameObject _pendingQuestionNavigation;
 
 	[Header("List")]
 	[SerializeField] private List<GameObject> _navigations;
@@ -81,7 +82,7 @@ public class BottomNavigationBarManager : Singleton<BottomNavigationBarManager>
 		//	ShowUserNavigation();
 		//	LoadingUI.isCorrectPanelSelected = true;
 		//}
-		UIManager.Instance.ShowAprrovePendingQuestionsPanel();
+		UIManager.Instance.ShowGetPendingQuestionsPanel();
 		//}
 	}
 

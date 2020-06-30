@@ -19,7 +19,8 @@ public enum Panels
 	Lose,
 	Win,
 	SendQuestion,
-	AprrovePendingQuestions
+	AprrovePendingQuestions,
+	GetPendingQuestions
 }
 
 public class UIManager : Singleton<UIManager>
@@ -31,6 +32,7 @@ public class UIManager : Singleton<UIManager>
 	[SerializeField] private GameObject panel_Settings;
 	[SerializeField] private GameObject panel_SignIn;
 	[SerializeField] private GameObject panel_UserProfile;
+	[SerializeField] private GameObject panel_GetPendingQuestions;
 	[SerializeField] private GameObject panel_ApprovePendingQuestions;
 
 	[Header("NavBar")]
@@ -99,7 +101,8 @@ public class UIManager : Singleton<UIManager>
 	public void ShowSettingsPanel() { StartCoroutine(PanelChanger(Panels.Settings)); }
 	public void ShowSignInPanel() { StartCoroutine(PanelChanger(Panels.SignIn)); }
 	public void ShowUserProfilePanel() { StartCoroutine(PanelChanger(Panels.UserProfile)); }
-	public void ShowAprrovePendingQuestionsPanel() { StartCoroutine(PanelChanger(Panels.AprrovePendingQuestions)); }
+	public void ShowGetPendingQuestionsPanel() { StartCoroutine(PanelChanger(Panels.GetPendingQuestions)); }
+	public void ShowApprovePendingQuestionPanel() { StartCoroutine(PanelChanger(Panels.AprrovePendingQuestions)); }
 
 	private IEnumerator PanelChanger(Panels panel)
 	{
@@ -169,10 +172,11 @@ public class UIManager : Singleton<UIManager>
 		panel_Settings.SetActive(panel == Panels.Settings);
 		panel_SignIn.SetActive(panel == Panels.SignIn);
 		panel_UserProfile.SetActive(panel == Panels.UserProfile);
+		panel_GetPendingQuestions.SetActive(panel == Panels.GetPendingQuestions);
 		panel_ApprovePendingQuestions.SetActive(panel == Panels.AprrovePendingQuestions);
 
 
-		if (panel == Panels.Categories || panel == Panels.Game ||  panel == Panels.SignIn)
+		if (panel == Panels.Categories || panel == Panels.Game || panel == Panels.SignIn || panel == Panels.GetPendingQuestions || panel == Panels.AprrovePendingQuestions)
 		{
 			_bottomNavigationBar.SetActive(false);
 		}

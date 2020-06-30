@@ -57,17 +57,17 @@ public class ActionManager : Singleton<ActionManager>
 
     public UnityAction UsernameAvaliable;
     public UnityAction UsernameNotAvaliable;
-   
+
+    public UnityAction<Dictionary<string, string>, Action, Action> ApproveQuestion;
 
     public delegate IEnumerator GetPendingQuestionsDelegate();
     public GetPendingQuestionsDelegate GetPendingQuestions;
 
-    public UnityAction<List<string>> CreatePendingQuestionList;
+    public UnityAction<List<Dictionary<string, string>>> CreatePendingQuestionList;
 
     public delegate IEnumerator GetQuestionDelegate();
 	public GetQuestionDelegate GetQuestion;
 
-    public UnityAction<QuestionStruct> AskQuestion;
 	//public UnityAction<IEnumerator<>> GetQuestion;
 
 	public UnityAction<Dictionary<string, object>> SendQuestion;

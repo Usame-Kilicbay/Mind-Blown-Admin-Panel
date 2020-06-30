@@ -213,8 +213,7 @@ namespace ConstantKeeper
 			public static readonly string PendingQuestions = "PendingQuestions";
 		}
 
-
-		public static class QuesitonPath
+		public static class QuestionDetailPaths
 		{
 
 			public static readonly string Question = "Question";
@@ -222,7 +221,11 @@ namespace ConstantKeeper
 			public static readonly string WrongOption1 = "WrongOption1";
 			public static readonly string WrongOption2 = "WrongOption2";
 			public static readonly string WrongOption3 = "WrongOption3";
-			public static readonly string Category = "Category";
+			public static readonly string QuestionCategory = "QuestionCategory";
+			public static readonly string QuestionLevel = "QuestionLevel";
+			public static readonly string QuestionLanguage = "QuestionLanguage";
+			public static readonly string QuestionID = "QuestionID";
+			public static readonly string SenderPlayerID = "SenderPlayerID";
 
 			public static class PrimaryCategories
 			{
