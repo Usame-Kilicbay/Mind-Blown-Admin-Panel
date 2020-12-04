@@ -58,8 +58,8 @@ public class UIManager : Singleton<UIManager>
 
 	private void OnEnable()
 	{
-		ActionManager.Instance.ShowSignInPanel += ShowSignInPanel;
-		ActionManager.Instance.ShowUserProfilePanel += ShowUserProfilePanel;
+		EventManager.Instance.ShowSignInPanel += ShowSignInPanel;
+		EventManager.Instance.ShowUserProfilePanel += ShowUserProfilePanel;
 	}
 
 	//private void OnDisable()

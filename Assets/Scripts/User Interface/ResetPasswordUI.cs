@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿using Constants;
+using EasyMobile;
+using DG.Tweening;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using EasyMobile;
-using ConstantKeeper;
-using DG.Tweening;
 
 public class ResetPasswordUI : Singleton<ResetPasswordUI>
 {
@@ -37,7 +37,7 @@ public class ResetPasswordUI : Singleton<ResetPasswordUI>
 
     private void ResetPassword() 
     {
-        ActionManager.Instance.ResetPasswordWithEmail(inputField_Email.text, ResetPasswordWithEmailSuccessful, ResetPasswordWithEmailFailed);
+        EventManager.Instance.ResetPasswordWithEmail(inputField_Email.text, ResetPasswordWithEmailSuccessful, ResetPasswordWithEmailFailed);
     }
 
     private void ResetPasswordWithEmailSuccessful()

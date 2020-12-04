@@ -33,7 +33,7 @@ public class PullToRefresh : MonoBehaviour, IBeginDragHandler, IDragHandler, IEn
 		if (isLineEnoughSize)
 		{
 			Debug.Log("Burada metod çağrılacak");
-			StartCoroutine(ActionManager.Instance.GetPendingQuestions());
+			StartCoroutine(EventManager.Instance.GetPendingQuestions());
 		}
 	}
 

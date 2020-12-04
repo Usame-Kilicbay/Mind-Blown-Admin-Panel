@@ -1,4 +1,4 @@
-﻿using ConstantKeeper;
+﻿using Constants;
 using EasyMobile;
 using System.Collections;
 using System.Collections.Generic;
@@ -83,7 +83,7 @@ public class UserProfileUI : MonoBehaviour
 
     private void SignOut() 
     {
-        ActionManager.Instance.SignOut(SignOutSuccessful, SignOutFailed);
+        EventManager.Instance.SignOut(SignOutSuccessful, SignOutFailed);
     }
 
     private void SignOutSuccessful()

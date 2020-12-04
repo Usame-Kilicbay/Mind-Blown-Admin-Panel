@@ -8133,6 +8133,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &543647058
 GameObject:
   m_ObjectHideFlags: 0
@@ -8705,6 +8707,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &589635845
 GameObject:
   m_ObjectHideFlags: 0
@@ -12253,9 +12257,9 @@ GameObject:
   m_Component:
   - component: {fileID: 869162045}
   - component: {fileID: 869162048}
+  - component: {fileID: 869162049}
   - component: {fileID: 869162047}
   - component: {fileID: 869162046}
-  - component: {fileID: 869162049}
   m_Layer: 5
   m_Name: Approve Pending Questions Panel
   m_TagString: Untagged
@@ -12353,16 +12357,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 409ed6ad586957942870879a5c48a885, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _questionInputField: {fileID: 1973513915}
-  _correctOptionInputField: {fileID: 805842519}
-  _wrongOption1InputField: {fileID: 2108828686}
-  _wrongOption2InputField: {fileID: 1901088610}
-  _wrongOption3InputField: {fileID: 1746763960}
-  _questionCategoryDropdown: {fileID: 513274744}
-  _questionLevelDropdown: {fileID: 1350706034}
-  _questionLanguageDropdown: {fileID: 1877388820}
-  _backToGetPendingQuestionPanelButton: {fileID: 403392885}
-  _approvePendingQuestionButton: {fileID: 678198834}
+  m_QuestionInputField: {fileID: 1973513915}
+  m_CorrectOptionInputField: {fileID: 805842519}
+  m_WrongOptionInputField1: {fileID: 2108828686}
+  m_WrongOptionInputField2: {fileID: 1901088610}
+  m_WrongOptionInputField3: {fileID: 1746763960}
+  m_InputFields:
+  - {fileID: 1973513915}
+  - {fileID: 805842519}
+  - {fileID: 2108828686}
+  - {fileID: 1901088610}
+  - {fileID: 1746763960}
+  m_QuestionCategoryDropdown: {fileID: 513274744}
+  m_QuestionLevelDropdown: {fileID: 1350706034}
+  m_QuestionLanguageDropdown: {fileID: 1877388820}
+  m_BackToGetPendingQuestionPanelButton: {fileID: 403392885}
+  m_ApprovePendingQuestionButton: {fileID: 678198834}
 --- !u!1 &872897309
 GameObject:
   m_ObjectHideFlags: 0
@@ -12413,6 +12423,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &874842542
 GameObject:
   m_ObjectHideFlags: 0
@@ -16669,6 +16681,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &1190592545
 GameObject:
   m_ObjectHideFlags: 0
@@ -20656,7 +20670,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1459603678}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22c70de9de801894f87be4b0e52e846a, type: 3}
+  m_Script: {fileID: 11500000, guid: 2af73e6e45210a041afa37182148baf8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &1459603680
@@ -22351,6 +22365,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &1609058646
 GameObject:
   m_ObjectHideFlags: 0
@@ -23406,6 +23422,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &1688453056
 GameObject:
   m_ObjectHideFlags: 0
@@ -23865,6 +23883,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 0}
 --- !u!1 &1715519341
 GameObject:
   m_ObjectHideFlags: 0

@@ -4,7 +4,7 @@ using System;
 using System.Collections;
 using UnityEngine.UI;
 
-public class ActionManager : Singleton<ActionManager>
+public class EventManager : Singleton<EventManager>
 {
     //Firebase Initialization
     public delegate void StartFirebaseDelegate(Action _OnSuccessCallback);
@@ -58,12 +58,12 @@ public class ActionManager : Singleton<ActionManager>
     public UnityAction UsernameAvaliable;
     public UnityAction UsernameNotAvaliable;
 
-    public UnityAction<Dictionary<string, string>, Action, Action> ApproveQuestion;
+    public UnityAction<Question, Action, Action> ApproveQuestion;
 
     public delegate IEnumerator GetPendingQuestionsDelegate();
     public GetPendingQuestionsDelegate GetPendingQuestions;
 
-    public UnityAction<List<Dictionary<string, string>>> CreatePendingQuestionList;
+    public UnityAction<List<Question>> CreatePendingQuestionList;
 
     public delegate IEnumerator GetQuestionDelegate();
 	public GetQuestionDelegate GetQuestion;

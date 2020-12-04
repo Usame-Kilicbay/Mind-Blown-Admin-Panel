@@ -52,7 +52,7 @@ public class OptionButton : MonoBehaviour//, IPointerClickHandler
 
     private void Subscribe()
     {
-        ActionManager.Instance.UpdateOptionButton += UpdateButton;
+        EventManager.Instance.UpdateOptionButton += UpdateButton;
     }
 
     //private void Unsubscribe() 
@@ -62,7 +62,7 @@ public class OptionButton : MonoBehaviour//, IPointerClickHandler
 
     private void PrepareButton()
     {
-        _optionButton.onClick.AddListener(() => ActionManager.Instance.ControlAnswer(isTrueOption, this));
+        _optionButton.onClick.AddListener(() => EventManager.Instance.ControlAnswer(isTrueOption, this));
     }
 
     private void UpdateButton(string optionText, ButtonCode buttonCode, bool isCorrectOption = false)

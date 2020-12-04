@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿using Constants;
+using DG.Tweening;
+using EasyMobile;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using DG.Tweening;
-using EasyMobile;
-using ConstantKeeper;
 
 public class SignInUI : MonoBehaviour
 {
@@ -42,7 +42,7 @@ public class SignInUI : MonoBehaviour
         string email = inputField_Email.textComponent.text.Replace("\u200B", "");
         string password = inputField_Password.textComponent.text.Replace("\u200B", "");
 
-        StartCoroutine(ActionManager.Instance.SignInWithEmailPassword(email, password, SignInEmailPasswordSuccessful, SignInWithEmailPasswordFailed));
+        StartCoroutine(EventManager.Instance.SignInWithEmailPassword(email, password, SignInEmailPasswordSuccessful, SignInWithEmailPasswordFailed));
     }
 
     private void SignInEmailPasswordSuccessful()

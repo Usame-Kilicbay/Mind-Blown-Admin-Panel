@@ -1,5 +1,6 @@
-﻿
-namespace ConstantKeeper
+﻿using UnityEngine;
+
+namespace Constants
 {
 	public static class DebugPaths
 	{
@@ -20,11 +21,10 @@ namespace ConstantKeeper
 		{
 			public static readonly string SignUpFailed = "Kayıt işlemi başarısız";
 			public static readonly string SignUpFailedDetail = "";
-	
+
 			public static readonly string SignUpSuccessful = "Kayıt işlemi başarılı!";
 			public static readonly string SignUpSuccessfulDetail = "Ana menüye yönlendiriliyorsunuz...";
 		}
-
 
 		public static class SignInPaths
 		{
@@ -35,28 +35,39 @@ namespace ConstantKeeper
 			public static readonly string SignInFailedDetails = "Sabit bir internet bağlantınız olduğundan emin olun. E-posta ve şifrenizin doğru olduğundan emin olun veya sıfırlayın. Eğer bir hesabınız yoksa, KAYIT olabilirsiniz...";
 		}
 
-		public static class SignOutPaths 
+		public static class SignOutPaths
 		{
 			public static readonly string SignOutSuccessful = "Çıkış işlemi başarılı!";
 			public static readonly string SignOutSuccessfulDetails = "Oturum kapatıldı giriş ekranına yönlendiriyorsunuz...";
-			
+
 			public static readonly string SignOutFailed = "Çıkış işlemi başarısız!";
 			public static readonly string SignOutFailedDetails = "Bilinmeyen hata! Lütfen daha sonra tekrar deneyiniz...";
 		}
 
-		public static class ResetPasswordPaths 
+		public static class ResetPasswordPaths
 		{
 			public static readonly string ResetPasswordSuccessful = "Şifre sıfırlama işlemi başarılı!";
 			public static readonly string ResetPasswordSuccessfulDetails = "Şifre sıfırlama bağlantısı gönderildi. Lütfen e-posta hesabınızı kontrol ediniz, şifre sıfırlama bağlantısı \"Spam\" klasöründe olabilir...";
-			
+
 			public static readonly string ResetPasswordFailed = "Şifre sıfırlama işlemi başarısız!";
 			public static readonly string ResetPasswordFailedDetails = "E-postanızı doğru girdiğinizden emin olun. Eğer bir hesabınız yoksa kayıt olabilirsiniz...";
 		}
 	}
 
+	public static class SendQuestionDebugs
+	{
+		public static readonly string QuestionSendSuccessful = "Soru gönderildi, onay bekleniyor";
+		public static readonly string QuestionSendFailed = "Soru gönredilemedi, tüm kutucukları doldurunuz";
+	}
+
 	public static class GetDataTaskDebugs
 	{
 		public static readonly string GetData = "Veri çekme işlemi";
+	}
+
+	public static class ConnectionDebugs
+	{
+		public static readonly string INTERNET_CONNECTION_ERROR = "Error, please check Internet Connection!";
 	}
 
 	public static class UserTaskDebugs
@@ -88,6 +99,8 @@ namespace ConstantKeeper
 			public static readonly string Language = "Language";
 			public static readonly string SignUpDate = "SignUpDate";
 			public static readonly string LastSeen = "LastSeen";
+			public static readonly string Online = "Online";
+			public static readonly string Offline = "Offline";
 
 			// Bool General Paths
 			public static readonly string SignInStatus = "SignInStatus";
@@ -103,6 +116,9 @@ namespace ConstantKeeper
 			public static readonly string HighScore = "HighScore";
 			public static readonly string TotalPlayTime = "TotalPlayTime";
 			public static readonly string TotalMatches = "TotalMatches";
+			public static readonly string SeenQuestions = "SeenQuestions";
+			public static readonly string Experience = "Experience";
+			public static readonly string RequiredExperience = "RequiredExperience";
 			public static readonly string CompletedMatches = "CompletedMatches";
 			public static readonly string CorrectAnswers = "CorrectAnswers";
 			public static readonly string WrongAnswers = "WrongAnswers";
@@ -125,7 +141,7 @@ namespace ConstantKeeper
 	{
 		// Main Paths
 		public static readonly string GameSettings = "GameSettings";
-		
+
 		// Secondary Paths
 		public static readonly string Localization = "Localization";
 		public static readonly string SoundSettings = "SoundSettings";
@@ -173,10 +189,10 @@ namespace ConstantKeeper
 		*/
 
 
-		
+
 	}
 
-	public static class RoomPaths 
+	public static class RoomPaths
 	{
 		// Main Paths
 		public static readonly string Rooms = "Rooms";
@@ -185,7 +201,7 @@ namespace ConstantKeeper
 		public static readonly string RoomID = "RoomID";
 		public static readonly string General = "General";
 		public static readonly string Progression = "Progression";
-		
+
 		// General Paths
 		public static readonly string P1_ID = "P1_ID";
 		public static readonly string P1_Username = "P1_Username";
@@ -213,44 +229,70 @@ namespace ConstantKeeper
 			public static readonly string PendingQuestions = "PendingQuestions";
 		}
 
-		public static class QuestionDetailPaths
+
+		public static class QuesitonPath
 		{
 
 			public static readonly string Question = "Question";
+			public static readonly string Options = "Options";
 			public static readonly string CorrectOption = "CorrectOption";
 			public static readonly string WrongOption1 = "WrongOption1";
 			public static readonly string WrongOption2 = "WrongOption2";
 			public static readonly string WrongOption3 = "WrongOption3";
 			public static readonly string QuestionCategory = "QuestionCategory";
-			public static readonly string QuestionLevel = "QuestionLevel";
 			public static readonly string QuestionLanguage = "QuestionLanguage";
-			public static readonly string QuestionID = "QuestionID";
+			public static readonly string QuestionLevel = "QuestionLevel";
 			public static readonly string SenderPlayerID = "SenderPlayerID";
 
-			public static class PrimaryCategories
+			public static class OptionPath
 			{
-				public static readonly string Mixed = "Mixed";
-				public static readonly string Science = "Science";
-				public static readonly string Art = "Art";
+				public static readonly string Option = "Option";
+
+				public static readonly string IsCorrectOption = "IsCorrectOption";
+				public static readonly string OptionText = "OptionText";
 			}
 
-			public static class ArtCategories
-			{
-				public static readonly string MartialArt = "MartialArt";
-				public static readonly string Movie = "Movie";
-				public static readonly string Music = "Music";
-				public static readonly string VideoGame = "VideoGame";
-				public static readonly string Book = "Book";
-				public static readonly string Anime = "Anime";
-			}
 
-			public static class ScienceCategories
+			public static class CategoryPaths
 			{
-				public static readonly string Math = "Math";
-				public static readonly string Language = "Language";
-				public static readonly string Technology = "Technology";
-				public static readonly string History = "History";
+
+				public static class PrimaryCategories
+				{
+					public static readonly string Mixed = "Mixed";
+					public static readonly string Science = "Science";
+					public static readonly string Art = "Art";
+				}
+
+				public static class ArtCategories
+				{
+					public static readonly string MartialArt = "MartialArt";
+					public static readonly string Movie = "Movie";
+					public static readonly string Music = "Music";
+					public static readonly string VideoGame = "VideoGame";
+					public static readonly string Book = "Book";
+					public static readonly string Anime = "Anime";
+				}
+
+				public static class ScienceCategories
+				{
+					public static readonly string Math = "Math";
+					public static readonly string Language = "Language";
+					public static readonly string Technology = "Technology";
+					public static readonly string History = "History";
+				}
 			}
 		}
 	}
+
+	public static class LocalPaths
+	{
+		public static readonly string CATEGORY_SAVE_PATH = $"{Application.persistentDataPath}/CategorySaves";
+	}
+
+	public static class PlayerPrefsKeys
+	{
+		public static readonly string CATEGORY_SELECTED = "CategorySelected";
+		public static readonly string FIRST_ENTRY = "FirstEntry";
+	}
+
 }

@@ -1,54 +1,33 @@
-﻿using ConstantKeeper;
+﻿using Constants;
 using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public struct PendingQuestionPackStruct 
-{
-	public string Question;
-	public string CorrectOption;
-	public string WrongOption1;
-	public string WrongOption2;
-	public string WrongOption3;
-	public string SenderPlayerID;
-	public string QuestionID;
-}
-
-public static class PendingQuestionPackKeeper
-{
-	public static string Question;
-	public static string CorrectOption;
-	public static string WrongOption1;
-	public static string WrongOption2;
-	public static string WrongOption3;
-	public static string QuestionCategory;
-	public static string QuestionLevel;
-	public static string QuestionID;
-	public static string SenderPlayerID;
-}
-
-
 public class GetPendingQuesitonsUI : MonoBehaviour
 {
-	[Header("Button")]
+	[Header("Buttons")]
 	[SerializeField] private Button _goToMainMenuButton;
 	[SerializeField] private Button _refreshListButton;
 
+	[Header("Parents")]
 	[SerializeField] private GameObject _pendingQuestionParent;
+	
+	[Header("RectTransforms")]
 	[SerializeField] private RectTransform _pendingQuestionParentRectTransform;
 
+	[Header("Prefabs")]
 	[SerializeField] private Button _pendingQuestionListButtonPrefab;
+	
 	private TextMeshProUGUI _pendingQuestionText;
-	private PendingQuestionPackSetter _pendingQuestionPackSetter;
 
 	private List<Button> _pendingQuestions;
 
 	private void OnEnable()
 	{
 		Subscribe();
-		StartCoroutine(ActionManager.Instance.GetPendingQuestions?.Invoke());
+		StartCoroutine(EventManager.Instance.GetPendingQuestions?.Invoke());
 	}
 
 	private void Start()
@@ -62,23 +41,27 @@ public class GetPendingQuesitonsUI : MonoBehaviour
 		GeneralControls.ControlQuit(Unsubscribe);	
 	}
 
+	#region Event Subscribe/Unsubscribe
+
 	private void Subscribe()
 	{
-		ActionManager.Instance.CreatePendingQuestionList += CreatePendingQuestionList;
+		EventManager.Instance.CreatePendingQuestionList += CreatePendingQuestionList;
 	}
 
 	private void Unsubscribe()
 	{
-		ActionManager.Instance.CreatePendingQuestionList -= CreatePendingQuestionList;
+		EventManager.Instance.CreatePendingQuestionList -= CreatePendingQuestionList;
 	}
+
+	#endregion
 
 	private void OnClickAddListener()
 	{
 		_goToMainMenuButton.onClick.AddListener(UIManager.Instance.ShowMainMenuPanel);
-		_refreshListButton.onClick.AddListener(() => StartCoroutine(ActionManager.Instance.GetPendingQuestions()));
+		_refreshListButton.onClick.AddListener(() => StartCoroutine(EventManager.Instance.GetPendingQuestions()));
 	}
 
-	private void CreatePendingQuestionList(List<Dictionary<string, string>> pendingQuestionPackDictList)
+	private void CreatePendingQuestionList(List<Question> pendingQuestionList)
 	{
 		if (_pendingQuestions.Count > 0)
 		{
@@ -92,20 +75,19 @@ public class GetPendingQuesitonsUI : MonoBehaviour
 
 		int questionAmount = 0;
 
-		foreach (Dictionary<string, string> questionPackDict in pendingQuestionPackDictList)
+		foreach (Question question in pendingQuestionList)
 		{
 			Button newButton = Instantiate(_pendingQuestionListButtonPrefab, _pendingQuestionParent.transform);
 			_pendingQuestions.Add(newButton);
 
-			_pendingQuestionText = newButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
-			_pendingQuestionText.SetText(questionPackDict[QuestionPaths.QuestionDetailPaths.Question]);
+			newButton.GetComponent<PendingQuestionButton>().Init(question);
 
-			_pendingQuestionPackSetter = newButton.GetComponent<PendingQuestionPackSetter>();
-			_pendingQuestionPackSetter.SetPendingQuestionKeeper(questionPackDict);
+			_pendingQuestionText = newButton.transform.GetChild(0).GetComponent<TextMeshProUGUI>();
+			_pendingQuestionText.SetText(question.QuestionText);
 
 			questionAmount++;
 		}
 
-		_pendingQuestionParentRectTransform.sizeDelta = new Vector2(0, questionAmount * 150 + 100);
+		_pendingQuestionParentRectTransform.sizeDelta = new Vector2(0, questionAmount * 150f + 100f);
 	}
 }
